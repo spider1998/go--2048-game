@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Go-Blog - Admin</title>
+    <link rel="stylesheet" href="./vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="./vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <div class="page-header">
+        <nav class="navbar page-header">
+            <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <a class="navbar-brand" href="#">
+                <p style="color: red;font-weight: bold;">Go-Blog - Admin</p>
+            <!-- <img src="./imgs/logo.png" alt="logo"> -->
+            </a>
+
+            <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item d-md-down-none">
+                    <a href="#">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge badge-pill badge-danger">5</span>
+                    </a>
+                </li>
+
+                <li class="nav-item d-md-down-none">
+                    <a href="#">
+                        <i class="fa fa-envelope-open"></i>
+                        <span class="badge badge-pill badge-danger">5</span>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="./imgs/avatar-1.png" class="avatar avatar-sm" alt="logo">
+                        <span class="small ml-1 d-md-down-none" id="operater">John Smith</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-header">Account</div>
+
+                        <a href="#" class="dropdown-item">
+                            <i class="fa fa-user"></i> Profile
+                        </a>
+
+                        <a href="#" class="dropdown-item">
+                            <i class="fa fa-envelope"></i> Messages
+                        </a>
+
+                        <div class="dropdown-header">Settings</div>
+
+                        <a href="#" class="dropdown-item">
+                            <i class="fa fa-bell"></i> Notifications
+                        </a>
+
+                        <a href="#" class="dropdown-item">
+                            <i class="fa fa-wrench"></i> Settings
+                        </a>
+
+                        <a href="login.html" class="dropdown-item">
+                        <i class="fa fa-lock"></i> Logout
+                    </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" id="static">
+                            <i class="icon icon-speedometer"></i> 站点总览
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" id="web_chat">
+                            <i class="icon icon-puzzle"></i> 分析统计
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="tables.html" class="nav-link active" id="art_top">
+                            <i class="icon icon-energy"></i> 文章排行
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="layouts-normal.html" class="nav-link"  id="admin_user">
+                            <i class="icon icon-people"></i> 用户管理
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="layouts-normal.html" class="nav-link" id="admin_art">
+                            <i class="icon icon-cloud-download"></i> 文章管理
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="layouts-normal.html" class="nav-link" id="setting">
+                            <i class="icon icon-graph"></i> 类别管理
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="layouts-normal.html" class="nav-link" id="admin_log">
+                            <i class="icon icon-target"></i> 站点日志
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="backup.html" class="nav-link" id="backup">
+                            <i class="icon icon-umbrella"></i> 数据备份
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="setting.html" class="nav-link"  id="admin_user">
+                            <i class="icon icon-people"></i> 站点配置
+                        </a>
+                    </li>
+
+                    
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            文章点赞（TOP 10）：
+                            <br>
+                            【每天刷新】
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Auth</th>
+                                        <th>Hot</th>
+                                        <th>PubTime</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="hot">
+                                   <!--  填充内容 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            文章阅读量（TOP 10）：
+                            <br>
+                            【实时刷新】
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Auth</th>
+                                        <th>Read</th>
+                                        <th>PubTime</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="read">
+                                    <!-- 填充内容 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./vendor/jquery/jquery.min.js"></script>
+<script src="./vendor/popper.js/popper.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="./vendor/chart.js/chart.min.js"></script>
+<script src="./js/carbon.js"></script>
+<script src="./js/demo.js"></script>
+<script>
+    function getQueryVariable(variable)
+        {
+           var query = window.location.search.substring(1);
+           var vars = query.split("&");
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=");
+                   if(pair[0] == variable){return pair[1];}
+           }
+           return(false);
+        }
+
+    var token = getQueryVariable("token")
+    $(document).ready(function(){
+
+        $("#static").attr("href","index.html?token="+token)
+        $("#web_chat").attr("href","chartjs.html?token="+token)
+        $("#art_top").attr("href","tables.html?token="+token)
+        $("#admin_user").attr("href","admin_user.html?token="+token)
+        $("#admin_art").attr("href","admin_art.html?token="+token)
+        $("#admin_announce").attr("href","admin_announce.html?token="+token)
+        $("#admin_setting").attr("href","admin_setting.html?token="+token)
+        $("#admin_log").attr("href","admin_log.html?token="+token)
+        $("#art_sort").attr("href","art_sort.html?token="+token)
+        $("#backup").attr("href","backup.html?token="+token)
+        $("#setting").attr("href","setting.html?token="+token)
+        //页面初始化获取管理员登陆信息/statistics
+        $.ajax({
+                type: "GET",//方法类型
+                contentType: "application/json",
+                url: "http://45.77.85.108:8081/admin/sessions/current",
+                success: function (result) {
+                  $("#operater").html(result.name);
+                },
+                beforeSend: function(xhr) {
+                  xhr.setRequestHeader("X-Access-Token", token);
+              },
+                error : function() {
+                  alert(result.error)
+                }
+            });
+
+        $.ajax({
+                type: "GET",//方法类型
+                contentType: "application/json",
+                url: "http://45.77.85.108:8081/admin/articles/top10",
+                success: function (result) {
+                  var html1 = ``;
+                  var html2 = ``;
+                  $.each(result.hot, function(i, obj) {
+                        html1 += ` <tr>
+                                    <td>`+obj.id+`</td>
+                                    <td class="text-nowrap">`+obj.title+`</td>
+                                    <td>`+obj.auth+`</td>
+                                    <td>`+obj.hot+`</td>
+                                    <td>`+obj.time+`</td>
+                                    </tr>
+                                `
+                  });
+                  $.each(result.read, function(i, obj) {
+                        html2 += ` <tr>
+                                    <td>`+obj.id+`</td>
+                                    <td class="text-nowrap">`+obj.title+`</td>
+                                    <td>`+obj.auth+`</td>
+                                    <td>`+obj.read+`</td>
+                                    <td>`+obj.time+`</td>
+                                    </tr>
+                                `
+                  });
+
+                  $("#hot").html(html1);
+                  $("#read").html(html2);
+                },
+                beforeSend: function(xhr) {
+                  xhr.setRequestHeader("X-Access-Token", token);
+              },
+                error : function() {
+                  alert(result.error)
+                }
+            });
+        
+    });
+
+</script>
+</body>
+</html>
